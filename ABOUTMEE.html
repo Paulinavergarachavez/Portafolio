@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Noto+Sans+KR:wght@100;900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABOUT ME</title>
+
+    <!-- STYLESHEET -->
+    <link rel="stylesheet" href="styless.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <style>
+        /* Estilos para la galería */
+        .gallery-section {
+            padding: 20px;
+            text-align: center;
+        }
+        .gallery-section h1 {
+            font-family: 'Anton SC', sans-serif;
+            margin-bottom: 20px;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+            gap: 10px; /* Espacio entre imágenes */
+            justify-items: center;
+        }
+        .gallery-item {
+            width: 100%;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            max-width: 300px; /* Tamaño máximo de las imágenes */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        .gallery-item img:hover {
+            transform: scale(1.1); /* Efecto de zoom al pasar el mouse */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sección de encabezado del sitio -->
+    <header>
+        <div class="animate__animated animate__bounce">
+            <h1 class="Montserrat">ABOUT ME</h1>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="https://drive.google.com/drive/folders/1-0dg90zFVN5zk6ajFFnCk1yEnZb6YjzS?usp=drive_link">Portfolio</a></li>
+            <li>
+                <a href="Contact.html">Contact</a>
+                <ul>
+                    <li><a onclick="sendEmail()">Email</a></li>
+                    <li><a href="https://www.instagram.com/linneyes?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Instagram</a></li>
+                </ul>
+            </li>
+            <li><a href="gallery.html">Gallery</a></li> <!-- Enlace a la galería -->
+        </ul>
+    </nav>
+
+    <main>
+        <div class="about-section">
+            <h1>About Me</h1>
+            <img src="perfil.jpg" alt="Perfil">
+            <p>Welcome to my space! I’m Paulina Vergara.</p>
+            <p>A passionate photographer with a keen eye for capturing moments that tell stories. My journey through the lens has allowed me to explore diverse fields, from stunning landscapes to intimate portraits, each image reflecting the world through my unique perspective. I am currently studying digital design, my skills are based on advertising and also street photography.</p>
+            <p>You can see some of my projects on the slide images:</p>
+        </div>
+
+        <h1>Works:</h1>
+
+        <div class="slider-container">
+            <div class="slider-content">
+                <div class="slider-item">
+                    <img src="cambio1.JPG" alt="Imagen 1">
+                </div>
+                <div class="slider-item">
+                    <img src="cambio2.JPG" alt="Imagen 2">
+                </div>
+                <div class="slider-item">
+                    <img src="cambio3.JPG" alt="Imagen 3">
+                </div>
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    </main>
+
+    <script>
+        let slideIndex = 0;
+        let slideInterval;
+
+        function plusSlides(n) {
+            clearInterval(slideInterval);
+            slideIndex += n;
+            showSlides();
+            slideInterval = setInterval(showSlides, 3000); // Reiniciar el intervalo
+        }
+
+        function showSlides() {
+            const slides = document.querySelectorAll(".slider-item");
+            const slideContent = document.querySelector(".slider-content");
+
+            if (slideIndex >= slides.length) {
+                slideIndex = 0;
+            }
+            if (slideIndex < 0) {
+                slideIndex = slides.length - 1;
+            }
+            const slideWidth = slides[0].clientWidth;
+            slideContent.style.transform = `translateX(${-slideIndex * slideWidth}px)`;
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            showSlides();
+            slideInterval = setInterval(() => {
+                slideIndex++;
+                showSlides();
+            }, 3000); // Cambia la imagen cada 3 segundos
+        });
+
+        function sendEmail() {
+            var recipient = "paulinavergara895@gmail.com";
+            var subject = "Asunto del correo";
+            var body = "Este es el cuerpo del correo.";
+
+            var mailto_link = "mailto:" + recipient + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+
+            window.location.href = mailto_link;
+        }
+    </script>
+
+    <footer>
+        <p>&copy; 2024</p>
+    </footer>
+</body>
+</html>
