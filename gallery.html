@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Noto+Sans+KR:wght@100;900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+
+    <!-- STYLESHEET -->
+    <link rel="stylesheet" href="styless.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <style>
+        /* Estilos específicos para la galería */
+        .gallery-section {
+            padding: 20px;
+            text-align: center;
+        }
+        .gallery-section h1 {
+            font-family: 'Anton SC', sans-serif;
+            margin-bottom: 20px;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+            gap: 10px; /* Reducido el espacio entre imágenes */
+            justify-items: center;
+            align-items: center; /* Alinea las imágenes verticalmente */
+        }
+        .gallery-item {
+            width: 100%; /* Asegura que cada item ocupa el ancho disponible */
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            max-width: 400px; /* Tamaño máximo de las imágenes */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        .gallery-item img:hover {
+            transform: scale(1.1); /* Aumenta el zoom al pasar el mouse */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sección de encabezado del sitio -->
+    <header>
+        <div class="animate__animated animate__bounce">
+            <h1 class="Montserrat">Gallery</h1>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="ABOUTMEE.html">About Me</a></li>
+            <li><a href="https://drive.google.com/drive/folders/1-0dg90zFVN5zk6ajFFnCk1yEnZb6YjzS?usp=drive_link">Portfolio</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="gallery-section">
+            <h1>Gallery</h1>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="cambio4.JPG" alt="Imagen 4">
+                </div>
+                <div class="gallery-item">
+                    <img src="cambio5.JPG" alt="Imagen 5">
+                </div>
+                <div class="gallery-item">
+                    <img src="cambio6.JPG" alt="Imagen 6">
+                </div>
+                <div class="gallery-item">
+                    <img src="cambio7.JPG" alt="Imagen 7">
+                </div>
+                <div class="gallery-item">
+                    <img src="cambio8.JPG" alt="Imagen 8">
+                </div>
+                <div class="gallery-item">
+                    <img src="cambio9.JPG" alt="Imagen 9">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lin eyes</title>
+
+    <!-- STYLESHEET -->
+    <link rel="stylesheet" href="styless.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body>
+    <!-- Sección de encabezado del sitio -->
+    <header>
+        <div class="animate__animated animate__bounce">
+            <h1 class="Montserrat">PAULINA VERGARA</h1>
+        </div>
+        <p>Photographer </p>
+    </header>
+
+    <!-- Barra de navegación con enlaces -->
+    <nav>
+        <ul>
+            <li><a href="ABOUTMEE.html">About me</a></li>
+            <li><a href="https://drive.google.com/drive/folders/1-0dg90zFVN5zk6ajFFnCk1yEnZb6YjzS?usp=drive_link">Portfolio</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenido principal de la página -->
+    <div class="about-section">
+        <h1>Welcome to my portfolio of photography!</h1>
+        <p>In this page you can know me as photographer, you can see more of my work on the "Portfolio" section. I hope we work together to bring your vision in real life!</p>
+    </div>  
+
+    <div class="about-section">
+        <p>You can watch this video to know more of how you can make your photos be cinematic:</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/ehCgDKfAoEc?si=jI1ZAXNfN__LMWpE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <h1>Curious facts about cats</h1>
+    <button onclick="getCatFact()">Obtener Dato Curioso</button>
+    <div id="catFact"></div>
+
+    <script>
+        async function getCatFact() {
+            const response = await fetch('https://catfact.ninja/fact');
+            const data = await response.json();
+            const catFactDiv = document.getElementById('catFact');
+
+            catFactDiv.innerHTML = `<p>${data.fact}</p>`;
+        }
+
+        // Configuración para el correo
+        function sendEmail() {
+            var recipient = "paulinavergara895@gmail.com";
+            var subject = "Asunto del correo";
+            var body = "Este es el cuerpo del correo.";
+
+            var mailto_link = "mailto:" + recipient + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+
+            window.location.href = mailto_link;
+        }
+    </script>
+
+    <footer>
+        <p>&copy; 2024</p>
+    </footer>
+</body>
+</html>
